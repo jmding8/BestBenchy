@@ -8,9 +8,19 @@ None yet, we're just getting started!
 
 # Log
 
-* 0001_prusaMiniProfile_2.4.0-beta4: Updating PrusaSlicer
-    * Among other changes, it looks like PrusaSlicer 2.4.0-beta4 changes how inner perimeters transition to outer perimeters
-    * Hopefully this will reduce the distance of the travel move between inner and outer perimeters, resulting in less significant extrusion flow interruption and reduced seams
+* 0005_3dbArches_prusaMk3sProfile_2.4beta4_flowContinued: flow during travel move
+    * Intent: from 0004, manual edit the gcode so that extrusion continues during the travel move from inner to outer perimeter, see if this improves the "ghosting" behavior
+    
+* 0004_prusaMk3sProfile_2.4beta4_arches: Reslice in 2.4-beta4
+    * Intent: 2.4-beta4 places the seam for the inner perimeters much closer to the seam for the outer perimeters, this may result in better flow re-stabilization post-seam. Let's see if this improves the "ghosting" behavior.
+    * Result: No better
+* 0003_prusaMk3sProfile_2.3_arches: Remove gap fill and top layers
+    * Intent: take 0002, and remove gap infill and top layers, to see if it helps reduce the "ghosting" artifacts
+    * Result: "ghosting" artifacts still present
+    * "Ghosting" seems likely to be due to flow re-stabilization after seam insertion
+* 0002_prusaMk3sProfile_2.3_arches: Reproduce "ghosting" artifacts
+    * Intent: isolate top of arches, ensure that the "ghosting" artifacts are reproducable
+    * Result: artifacts reproduced
 * 0001_prusaMiniProfile_2.3: Initial starting point
     * Printer, Kingroon KP3s
         * Purchased in November 2020
@@ -34,4 +44,8 @@ None yet, we're just getting started!
         * PolyMaker is an established brand with a reputation to uphold, and will hopefully make a consitent product
         * No mention of filament dimensional accuracy from the manufacturer
     * Results
-        * ...
+        * Pretty poor overall
+        * Hull not very smooth
+        * Stringing everywhere
+        * Unexpected gaps in extrusion
+        * "Ghosting" artifacts in the arch area
