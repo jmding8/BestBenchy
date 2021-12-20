@@ -8,9 +8,16 @@ None yet, we're just getting started!
 
 # Log
 
+* 0007_cyl_mk3sProfile_2.4b4
+    * Intent: reproduce "ghosting" in a cylinder
+    * Result: Was not able to reproduce, seam insertions actually look really good
+* 0006_3dbArchs_prusaMk3sProfile_2.4beta4_constPerimSpeed
+    * Intent: from 0004, re-slice with the same perimeter and external perimeter speed. Currently, 45mm/s perimeter with 25mm/s external perimeter.
+    * Why: pressure drop due to speed change may take time to re-stabilize, leading to "ghosting" behavior.
+    * Result: "ghosting" still present.
 * 0005_3dbArches_prusaMk3sProfile_2.4beta4_flowContinued: flow during travel move
     * Intent: from 0004, manual edit the gcode so that extrusion continues during the travel move from inner to outer perimeter, see if this improves the "ghosting" behavior
-    
+    * Cancelled, going to try 0006 first
 * 0004_prusaMk3sProfile_2.4beta4_arches: Reslice in 2.4-beta4
     * Intent: 2.4-beta4 places the seam for the inner perimeters much closer to the seam for the outer perimeters, this may result in better flow re-stabilization post-seam. Let's see if this improves the "ghosting" behavior.
     * Result: No better
