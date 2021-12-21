@@ -10,7 +10,7 @@ None yet, we're just getting started!
 
 * 0008_3dbArchs_mk3s_2.4b4_extrudeTransitions
     * Intent: starting with 0004, add extrusions during the travel moves between the internal and external perimeters to see if holding constant flow during that transition will eliminate the "ghosting" issue
-    * Result:
+    * Result: From watching the print it became clear that the "ghosting" is actually due to the wipe! There is a slight blob where the wipe ends, which forms this "ghosting" artifact.
 * 0007_cyl_mk3sProfile_2.4b4
     * Intent: reproduce "ghosting" in a cylinder
     * Result: Was not able to reproduce, seam insertions actually look really good
